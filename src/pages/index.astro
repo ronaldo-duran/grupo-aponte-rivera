@@ -1,0 +1,209 @@
+---
+import Base from '../layouts/Base.astro';
+import Icono from '../components/Icono.astro';
+import Monograma from '../components/Monograma.astro';
+import { categorias, grupo } from '../data/grupo.ts';
+import { niveles } from '../data/club.ts';
+
+const title = 'Grupo Aponte Rivera — Un grupo, muchas experiencias';
+const description =
+  'Restaurantes, heladerías, cervecerías, educación e inmobiliaria del Grupo Aponte Rivera. Conoce el Club Aponte Rivera y acumula puntos en todos nuestros comercios.';
+---
+
+<Base title={title} description={description}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,var(--color-noche-700)_0%,var(--color-noche-800)_45%,var(--color-noche-950)_100%)]"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-oro-400/10 blur-3xl"
+    >
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28">
+      <div class="mx-auto max-w-3xl text-center reveal">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-oro-400/30 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-oro-300"
+        >
+          {grupo.totalComercios} comercios · una sola familia
+        </span>
+        <h1
+          class="mt-6 font-display text-4xl font-semibold leading-tight text-ink-1 sm:text-6xl"
+        >
+          Un grupo,<br />
+          <span class="text-oro-400">muchas experiencias</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-2 sm:text-lg">
+          Restaurantes, heladerías, cervecerías, un colegio y una inmobiliaria.
+          Lugares distintos con la misma forma de atender: cercana, cuidada y
+          hecha para quedarse.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="/club"
+            class="w-full rounded-full bg-oro-400 px-6 py-3 text-center text-sm font-semibold text-noche-900 transition-colors hover:bg-oro-300 sm:w-auto"
+          >
+            Conoce el Club Aponte Rivera
+          </a>
+          <a
+            href="#comercios"
+            class="w-full rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-ink-1 transition-colors hover:border-oro-400/50 sm:w-auto"
+          >
+            Ver nuestros comercios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL GRUPO -->
+  <section id="grupo" class="scroll-mt-24 border-t border-white/5 bg-noche-900">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="reveal">
+          <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+            Una misma forma de atender
+          </h2>
+          <p class="mt-5 leading-relaxed text-ink-2">
+            El Grupo Aponte Rivera reúne comercios de distintos sectores bajo un
+            mismo propósito: que cada persona que entra se sienta bien recibida y
+            quiera volver. Lo que cambia es el producto; lo que no cambia es el
+            cuidado.
+          </p>
+          <p class="mt-4 leading-relaxed text-ink-2">
+            Por eso creamos un solo programa de fidelización para todos:
+            compras en cualquiera de nuestros comercios y los beneficios te
+            acompañan en toda la familia.
+          </p>
+          <a
+            href="/club"
+            class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-oro-300 hover:text-oro-400"
+          >
+            Así funciona el Club
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <dl class="grid grid-cols-2 gap-4 reveal">
+          <div class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <dt class="font-display text-4xl font-semibold text-oro-400">{grupo.totalComercios}</dt>
+            <dd class="mt-1 text-sm text-ink-2">comercios del grupo</dd>
+          </div>
+          <div class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <dt class="font-display text-4xl font-semibold text-oro-400">5</dt>
+            <dd class="mt-1 text-sm text-ink-2">sectores distintos</dd>
+          </div>
+          <div class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <dt class="font-display text-4xl font-semibold text-oro-400">4</dt>
+            <dd class="mt-1 text-sm text-ink-2">niveles en el Club</dd>
+          </div>
+          <div class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <dt class="font-display text-4xl font-semibold text-oro-400">1</dt>
+            <dd class="mt-1 text-sm text-ink-2">sola credencial</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMERCIOS -->
+  <section id="comercios" class="scroll-mt-24 border-t border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+          Nuestros comercios
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink-2">
+          Cinco sectores, una sola experiencia de grupo. Elige el plan del día:
+          siempre hay un comercio Aponte Rivera cerca.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          categorias.map((c) => (
+            <article class="group reveal rounded-2xl border border-white/8 bg-noche-900 p-7 transition-colors hover:border-oro-400/40">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-oro-400/10 text-oro-300">
+                <Icono nombre={c.icono} />
+              </span>
+              <h3 class="mt-5 font-display text-xl font-semibold text-ink-1">{c.nombre}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-2">{c.descripcion}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB (preview / CTA) -->
+  <section class="scroll-mt-24 border-t border-white/5 bg-noche-900">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-oro-400/20 bg-gradient-to-br from-noche-800 to-noche-950 p-8 sm:p-14"
+      >
+        <div
+          class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-oro-400/10 blur-3xl"
+        >
+        </div>
+        <div class="relative grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div class="reveal">
+            <div class="flex items-center gap-3">
+              <Monograma class="h-11 w-11 text-xl" />
+              <span class="text-xs font-medium uppercase tracking-widest text-oro-300">
+                Programa de fidelización
+              </span>
+            </div>
+            <h2 class="mt-5 font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+              Club Aponte Rivera
+            </h2>
+            <p class="mt-4 max-w-xl leading-relaxed text-ink-2">
+              Un solo club para todos los comercios del grupo. Es gratis:
+              compras, acumulas puntos y subes de nivel. Y si quieres el nivel
+              más alto desde ya, puedes suscribirte.
+            </p>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/club"
+                class="rounded-full bg-oro-400 px-6 py-3 text-center text-sm font-semibold text-noche-900 transition-colors hover:bg-oro-300"
+              >
+                Conoce todos los beneficios
+              </a>
+              <a
+                href={grupo.urlClubApp}
+                class="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-ink-1 transition-colors hover:border-oro-400/50"
+              >
+                Ya soy miembro · Ingresar
+              </a>
+            </div>
+          </div>
+
+          <ul class="grid grid-cols-2 gap-3 reveal">
+            {
+              niveles.map((n) => (
+                <li class="rounded-xl border border-white/8 bg-white/5 px-4 py-4 text-center">
+                  <span
+                    class="mx-auto flex gap-0.5"
+                    aria-hidden="true"
+                    style={`justify-content:center`}
+                  >
+                    {Array.from({ length: n.rombos }).map(() => (
+                      <span
+                        class="inline-block h-2.5 w-2.5 rotate-45 rounded-[2px]"
+                        style={`background: var(--color-nivel-${n.slug})`}
+                      />
+                    ))}
+                  </span>
+                  <span class="mt-2 block font-display text-sm font-semibold text-ink-1">
+                    {n.nombre}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

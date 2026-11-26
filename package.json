@@ -1,0 +1,26 @@
+{
+  "name": "grupo-aponte-rivera",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sitio web corporativo del Grupo Aponte Rivera con la landing del Club Aponte Rivera.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write \"**/*.{astro,ts,js,css,md,json}\"",
+    "lint": "prettier --check \"**/*.{astro,ts,js,css,md,json}\""
+  },
+  "dependencies": {
+    "@fontsource-variable/figtree": "^5.2.0",
+    "@fontsource-variable/fraunces": "^5.2.0",
+    "astro": "^5.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "prettier": "^3.5.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.0"
+  }
+}

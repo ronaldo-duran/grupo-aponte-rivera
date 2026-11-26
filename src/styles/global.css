@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+/*
+  Tokens de marca del Grupo Aponte Rivera.
+  Dirección visual aprobada por el cliente: azul noche + dorado, tono
+  cinematográfico. OJO: esta es la identidad del GRUPO, distinta del verde
+  del Club Aponte Rivera (ver skill club-ar-ui). Un solo lugar para los
+  colores: cámbialos aquí y el sitio entero responde.
+*/
+@theme {
+  /* Azul noche */
+  --color-noche-950: #0b1526;
+  --color-noche-900: #101d33;
+  --color-noche-800: #16233a;
+  --color-noche-700: #1e2f4d;
+  --color-noche-600: #294066;
+
+  /* Dorado de marca */
+  --color-oro-300: #e7cf96;
+  --color-oro-400: #d8b46a;
+  --color-oro-500: #c79a45;
+
+  /* Tinta sobre fondo oscuro */
+  --color-ink-1: #f4f0e6;
+  --color-ink-2: #c3ccdb;
+  --color-ink-3: #8a97ac;
+
+  /* Niveles del Club (solo para la sección landing) */
+  --color-nivel-bronce: #b08d57;
+  --color-nivel-plata: #c7ccd4;
+  --color-nivel-oro: #d8b46a;
+  --color-nivel-diamante: #9d8cff;
+
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-noche-800);
+  color: var(--color-ink-1);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-oro-400);
+  color: var(--color-noche-900);
+}
+
+/*
+  Aparición suave al hacer scroll. Solo se oculta cuando hay JS (la clase `js`
+  la pone un script en <head>): sin JS, todo el contenido queda visible.
+*/
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Foco visible y accesible en todo el sitio */
+:focus-visible {
+  outline: 2px solid var(--color-oro-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

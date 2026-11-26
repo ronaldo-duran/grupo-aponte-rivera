@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-9 w-9' } = Astro.props;
+---
+
+<span
+  class:list={[
+    'inline-flex items-center justify-center rounded-lg bg-noche-900 ring-1 ring-oro-400/40',
+    className,
+  ]}
+  aria-hidden="true"
+>
+  <span class="font-display font-bold text-oro-400 leading-none tracking-tight">AR</span>
+</span>

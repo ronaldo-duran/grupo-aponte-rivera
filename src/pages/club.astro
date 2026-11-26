@@ -1,0 +1,308 @@
+---
+import Base from '../layouts/Base.astro';
+import Monograma from '../components/Monograma.astro';
+import Check from '../components/Check.astro';
+import { grupo } from '../data/grupo.ts';
+import {
+  niveles,
+  comoFunciona,
+  formasDeSubir,
+  membresia,
+  vigenciaPuntosTexto,
+} from '../data/club.ts';
+
+const title = 'Club Aponte Rivera — Gratis, acumulas puntos y subes de nivel';
+const description =
+  'El Club Aponte Rivera es el programa de fidelización del grupo. Regístrate gratis, acumula puntos comprando en nuestros comercios y sube por los niveles Bronce, Plata, Oro y Diamante.';
+---
+
+<Base title={title} description={description}>
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-white/5">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_0%,var(--color-noche-700)_0%,var(--color-noche-800)_50%,var(--color-noche-950)_100%)]"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 pb-20 pt-20 text-center sm:px-6 sm:pt-28">
+      <div class="reveal">
+        <div class="mx-auto flex w-fit items-center gap-3">
+          <Monograma class="h-12 w-12 text-2xl" />
+        </div>
+        <span
+          class="mt-6 inline-flex items-center gap-2 rounded-full border border-oro-400/30 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-oro-300"
+        >
+          Gratis para siempre
+        </span>
+        <h1 class="mt-5 font-display text-4xl font-semibold leading-tight text-ink-1 sm:text-6xl">
+          Club Aponte Rivera
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink-2 sm:text-lg">
+          El club que premia tu lealtad en todos los comercios del grupo.
+          Regístrate sin costo, acumula puntos con cada compra y sube de nivel.
+          Entre más alto tu nivel, mejores beneficios.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={grupo.urlClubApp}
+            class="w-full rounded-full bg-oro-400 px-6 py-3 text-center text-sm font-semibold text-noche-900 transition-colors hover:bg-oro-300 sm:w-auto"
+          >
+            Registrarme gratis
+          </a>
+          <a
+            href="#niveles"
+            class="w-full rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-ink-1 transition-colors hover:border-oro-400/50 sm:w-auto"
+          >
+            Ver los niveles
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES / PARA QUÉ SIRVE -->
+  <section class="border-b border-white/5 bg-noche-900">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div class="reveal lg:sticky lg:top-24">
+          <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+            ¿Qué es el Club?
+          </h2>
+          <p class="mt-5 leading-relaxed text-ink-2">
+            Es un solo programa de fidelización para los {grupo.totalComercios}
+            comercios del Grupo Aponte Rivera. Una credencial que te acompaña en
+            restaurantes, heladerías, cervecerías, el colegio y la inmobiliaria.
+          </p>
+          <p class="mt-4 leading-relaxed text-ink-2">
+            No tienes que llevar tarjetas distintas ni empezar de cero en cada
+            lugar: tus compras suman en un mismo lugar y tu nivel vale en toda la
+            familia.
+          </p>
+        </div>
+
+        <ul class="grid gap-4 reveal sm:grid-cols-2">
+          <li class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <h3 class="font-display text-lg font-semibold text-oro-300">Para qué sirve</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-2">
+              Para que te reconozcamos como cliente del grupo y recibas
+              beneficios cada vez mejores a medida que subes de nivel.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <h3 class="font-display text-lg font-semibold text-oro-300">Los puntos son estatus</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-2">
+              Tus puntos no se gastan ni se canjean: definen tu nivel. Cada nivel
+              trae beneficios fijos que disfrutas mostrando tu credencial.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <h3 class="font-display text-lg font-semibold text-oro-300">Una sola credencial</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-2">
+              La llevas en tu celular. En caja muestras tu código y listo:
+              sin plásticos ni papeles.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-white/8 bg-noche-800 p-6">
+            <h3 class="font-display text-lg font-semibold text-oro-300">Vigencia clara</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-2">
+              {vigenciaPuntosTexto} Así siempre reflejan tu actividad reciente en
+              el grupo.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">Cómo funciona</h2>
+        <p class="mt-4 leading-relaxed text-ink-2">En cuatro pasos sencillos.</p>
+      </div>
+      <ol class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          comoFunciona.map((p, i) => (
+            <li class="reveal rounded-2xl border border-white/8 bg-noche-900 p-7">
+              <span class="font-display text-3xl font-semibold text-oro-400/70">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <h3 class="mt-3 font-display text-lg font-semibold text-ink-1">{p.titulo}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-2">{p.texto}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- NIVELES -->
+  <section id="niveles" class="scroll-mt-24 border-b border-white/5 bg-noche-900">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">Cuatro niveles</h2>
+        <p class="mt-4 leading-relaxed text-ink-2">
+          Subes a medida que acumulas puntos. Entre más alto el nivel, mejor te
+          trata el grupo.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          niveles.map((n) => (
+            <article
+              class="reveal flex flex-col rounded-2xl border border-white/8 bg-noche-800 p-7"
+              class:list={[n.slug === 'diamante' && 'ring-1 ring-nivel-diamante/40']}
+            >
+              <span class="flex gap-1" aria-label={`${n.rombos} rombos`}>
+                {Array.from({ length: 4 }).map((_, idx) => (
+                  <span
+                    class="inline-block h-3 w-3 rotate-45 rounded-[2px]"
+                    style={
+                      idx < n.rombos
+                        ? `background: var(--color-nivel-${n.slug})`
+                        : 'background: rgba(255,255,255,0.08)'
+                    }
+                  />
+                ))}
+              </span>
+              <h3 class="mt-5 font-display text-2xl font-semibold text-ink-1">{n.nombre}</h3>
+              <p class="mt-1 text-sm font-medium text-oro-300">{n.desde}</p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-2">{n.gancho}</p>
+            </article>
+          ))
+        }
+      </div>
+      <p class="mt-6 text-xs text-ink-3">
+        * Los umbrales de puntos son una referencia y pueden ajustarse. El nivel
+        vigente es siempre el que verás en tu credencial del Club.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRES FORMAS DE LLEGAR A UN NIVEL -->
+  <section class="border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+          Tres formas de subir
+        </h2>
+        <p class="mt-4 leading-relaxed text-ink-2">
+          No solo se sube comprando. Hay tres caminos hacia los niveles más altos.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {
+          formasDeSubir.map((f) => (
+            <article class="reveal rounded-2xl border border-white/8 bg-noche-900 p-7">
+              <h3 class="font-display text-xl font-semibold text-oro-300">{f.titulo}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-ink-2">{f.texto}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CUÁNTO VALE / MEMBRESÍA -->
+  <section id="membresia" class="scroll-mt-24 border-b border-white/5 bg-noche-900">
+    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="max-w-2xl reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">¿Cuánto vale?</h2>
+        <p class="mt-4 leading-relaxed text-ink-2">
+          Entrar al Club es gratis. Si quieres el nivel más alto desde ya, puedes
+          suscribirte a la membresía Diamante.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-5 lg:grid-cols-2">
+        <!-- Gratis -->
+        <article class="reveal flex flex-col rounded-3xl border border-white/8 bg-noche-800 p-8">
+          <span class="text-xs font-medium uppercase tracking-widest text-ink-3">El Club</span>
+          <p class="mt-3 font-display text-4xl font-semibold text-ink-1">Gratis</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink-2">
+            Te registras sin costo y empiezas a acumular. Subes de nivel con tus
+            compras, a tu ritmo.
+          </p>
+          <ul class="mt-6 space-y-2 text-sm text-ink-2">
+            <li class="flex gap-2"><Check /> Acumulas puntos en todos los comercios</li>
+            <li class="flex gap-2"><Check /> Beneficios según tu nivel</li>
+            <li class="flex gap-2"><Check /> Credencial en tu celular</li>
+          </ul>
+          <a
+            href={grupo.urlClubApp}
+            class="mt-7 rounded-full border border-white/15 px-6 py-3 text-center text-sm font-semibold text-ink-1 transition-colors hover:border-oro-400/50"
+          >
+            Registrarme gratis
+          </a>
+        </article>
+
+        <!-- Membresía Diamante -->
+        <article
+          class="reveal relative flex flex-col overflow-hidden rounded-3xl border border-oro-400/30 bg-gradient-to-br from-noche-800 to-noche-950 p-8"
+        >
+          <div
+            class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-oro-400/10 blur-2xl"
+          >
+          </div>
+          <div class="relative flex items-center gap-2">
+            <span class="flex gap-1" aria-hidden="true">
+              {Array.from({ length: 4 }).map(() => (
+                <span
+                  class="inline-block h-3 w-3 rotate-45 rounded-[2px]"
+                  style="background: var(--color-nivel-diamante)"
+                />
+              ))}
+            </span>
+            <span class="text-xs font-medium uppercase tracking-widest text-oro-300">
+              Membresía {membresia.nivel}
+            </span>
+          </div>
+          <p class="relative mt-3 font-display text-4xl font-semibold text-ink-1">
+            {membresia.mensual}
+            <span class="text-base font-normal text-ink-3">/mes</span>
+          </p>
+          <p class="relative mt-1 text-sm text-ink-2">
+            o {membresia.anual}/año — {membresia.ahorroAnualTexto}
+          </p>
+          <p class="relative mt-3 text-sm leading-relaxed text-ink-2">
+            El nivel Diamante desde el primer día, sin esperar a acumular puntos.
+            Renuevas cuando quieras con un enlace de pago.
+          </p>
+          <ul class="relative mt-6 space-y-2 text-sm text-ink-2">
+            <li class="flex gap-2"><Check /> Nivel Diamante inmediato</li>
+            <li class="flex gap-2"><Check /> Todos los beneficios del nivel más alto</li>
+            <li class="flex gap-2"><Check /> Renovación por enlace de pago</li>
+          </ul>
+          <a
+            href={grupo.urlClubApp}
+            class="relative mt-7 rounded-full bg-oro-400 px-6 py-3 text-center text-sm font-semibold text-noche-900 transition-colors hover:bg-oro-300"
+          >
+            Quiero Diamante
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="border-b border-white/5">
+    <div class="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+      <div class="reveal">
+        <h2 class="font-display text-3xl font-semibold text-ink-1 sm:text-4xl">
+          Empieza a ganar hoy
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl leading-relaxed text-ink-2">
+          Te registras con tu documento y un PIN. En menos de un minuto ya estás
+          sumando puntos en el Grupo Aponte Rivera.
+        </p>
+        <a
+          href={grupo.urlClubApp}
+          class="mt-8 inline-flex rounded-full bg-oro-400 px-8 py-3.5 text-sm font-semibold text-noche-900 transition-colors hover:bg-oro-300"
+        >
+          Registrarme gratis
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
